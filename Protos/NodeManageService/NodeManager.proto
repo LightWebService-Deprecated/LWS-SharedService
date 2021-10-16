@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "CommonCommunication.proto";
+
+option csharp_namespace = "LWS_NodeManager";
+
+package shared.node.manage;
+
+message RegisterNodeRequest {
+    string code = 1;
+}
+
+service NodeManagerService {
+    rpc GetNodeInformation (RegisterNodeRequest) returns (Result);
+}
