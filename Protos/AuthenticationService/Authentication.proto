@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "CommonCommunication.proto";
+
+option csharp_namespace = "LWS_Authentication";
+
+package shared.auth;
+
+message RegisterRequestMessage {
+  string userEmail = 1;
+  string userPassword = 2;
+}
+
+message LoginRequestMessage {
+  string userEmail = 1;
+  string userPassword = 2;
+}
+
+message AuthenticateUserMessage {
+  string userToken = 1;
+}
+
+service AuthenticationRpc {
+  rpc RegisterRequest (RegisterRequestMessage) returns (Result);
+  rpc LoginRequest (LoginRequestMessage) returns (Result);
+  rpc AuthenticateUserRequest (AuthenticateUserMessage) returns (Result);
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "LWS_Shared";
+
+package shared;
+
+enum ResultCode {
+  UNKNOWN = 0;
+  SUCCESS = 1;
+  DUPLICATE = 2;
+  FORBIDDEN = 3;
+  NOTFOUND = 4;
+}
+
+message Result {
+  ResultCode resultCode = 1;
+  string content = 2;
+  string message = 3;
+}
