@@ -10,6 +10,9 @@ message RegisterNodeRequest {
     string code = 1;
 }
 
+message HeartbeatRequest {}
+
 service NodeManagerService {
     rpc GetNodeInformation (RegisterNodeRequest) returns (Result);
+    rpc NodeHeartbeat (HeartbeatRequest) returns (Result);
 }
