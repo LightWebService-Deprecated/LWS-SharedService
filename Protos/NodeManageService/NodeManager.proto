@@ -16,6 +16,8 @@ enum ContainerType {
 
 message ContainerRequest {
     ContainerType containerType = 1;
+    string repositoryUrl = 2;
+    string jsonSettings = 3;
 }
 
 message HeartbeatRequest {}
