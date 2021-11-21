@@ -10,9 +10,18 @@ message RegisterNodeRequest {
     string code = 1;
 }
 
+enum ContainerType {
+    ASPSERVICE = 0;
+}
+
+message ContainerRequest {
+    ContainerRequest containerRequest = 1;
+}
+
 message HeartbeatRequest {}
 
 service NodeManagerService {
     rpc GetNodeInformation (RegisterNodeRequest) returns (Result);
     rpc NodeHeartbeat (HeartbeatRequest) returns (Result);
+    rpc RequestContainer (ContainerRequest) returns (Result);
 }
