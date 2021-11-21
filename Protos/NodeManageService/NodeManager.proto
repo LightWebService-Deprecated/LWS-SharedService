@@ -15,7 +15,7 @@ enum ContainerType {
 }
 
 message ContainerRequest {
-    ContainerRequest containerRequest = 1;
+    ContainerType containerType = 1;
 }
 
 message HeartbeatRequest {}
